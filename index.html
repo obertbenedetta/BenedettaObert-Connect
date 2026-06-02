@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Benedetta Obert — Calling Card</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://googleapis.com" rel="stylesheet"/>
 <style>
   :root {
     --navy: #1B2B4B;
@@ -13,6 +14,7 @@
     --white: #FFFFFF;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  
   body {
     font-family: 'DM Sans', sans-serif;
     background: #0D1929;
@@ -23,6 +25,7 @@
 
   .card-wrapper {
     display: flex; flex-direction: column; align-items: center; gap: 32px;
+    width: 100%;
   }
 
   /* FRONT CARD */
@@ -31,6 +34,7 @@
     background: var(--navy);
     position: relative; overflow: hidden;
     box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    border: 1px solid rgba(201,151,58,0.2);
   }
   .card::before {
     content: '';
@@ -64,6 +68,7 @@
   }
   .card-contact {
     display: flex; align-items: center; gap: 14px;
+    text-decoration: none;
   }
   .card-contact-icon {
     width: 28px; height: 28px; flex-shrink: 0;
@@ -94,6 +99,7 @@
     box-shadow: 0 40px 80px rgba(0,0,0,0.3);
     padding: 40px;
     position: relative; overflow: hidden;
+    border: 1px solid rgba(27,43,75,0.1);
   }
   .card-back::before {
     content: 'B·O';
@@ -129,6 +135,21 @@
   }
   .back-footer strong { color: var(--navy); }
 
+  /* PORTFOLIO CTA LINK BUTTON */
+  .card-portfolio-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--gold); color: var(--navy);
+    width: 420px; padding: 14px; font-size: 12px;
+    letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
+    text-decoration: none; transition: all 0.25s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  .card-portfolio-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+  .card-portfolio-btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
+
   /* CTA */
   .download-hint {
     font-size: 12px; color: rgba(255,255,255,0.3);
@@ -140,9 +161,17 @@
     .card { box-shadow: none; }
     .card-back { box-shadow: none; }
     .download-hint { display: none; }
+    .card-portfolio-btn { display: none; }
   }
+
   @media (max-width: 460px) {
-    .card, .card-back { width: 100%; }
+    body { padding: 20px 16px; }
+    .card, .card-back, .card-portfolio-btn { width: 100%; }
+    .card-top { padding: 32px 24px 0; }
+    .card-bottom { padding: 24px 24px 32px; }
+    .card-divider { margin: 0 24px; }
+    .card-tags { padding: 0 24px 24px; }
+    .card-name { font-size: 32px; }
   }
 </style>
 </head>
@@ -159,28 +188,33 @@
     </div>
     <div class="card-divider"></div>
     <div class="card-bottom">
-      <div class="card-contact">
+      
+      <!-- Email Cliccabile -->
+      <a href="mailto:obert.benedetta@gmail.com" class="card-contact">
         <div class="card-contact-icon">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <div class="card-contact-text">
           <strong>obert.benedetta@gmail.com</strong>
         </div>
-      </div>
-      <div class="card-contact">
+      </a>
+
+      <!-- Telefono / WhatsApp Cliccabile -->
+      <a href="https://wa.me" class="card-contact" target="_blank">
         <div class="card-contact-icon">
           <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         </div>
         <div class="card-contact-text">
           <strong>+39 334 810 3387</strong>
         </div>
-      </div>
+      </a>
+
     </div>
     <div class="card-tags">
       <span class="card-tag">Olympic Games</span>
       <span class="card-tag">Brand Activations</span>
       <span class="card-tag">Event Operations</span>
-      <span class="card-tag">Luxury & Retail</span>
+      <span class="card-tag">Luxury &amp; Retail</span>
       <span class="card-tag">Supply Chain</span>
       <span class="card-tag">Digital Transformation</span>
     </div>
@@ -191,10 +225,10 @@
     <div class="back-label">What I Deliver</div>
     <div class="back-title">From strategic brief to last day of operations — with nothing falling through the cracks.</div>
     <div class="back-items">
-      <div class="back-item">Large-scale event & sponsorship operations (Olympic Games, major sporting events)</div>
-      <div class="back-item">Brand market entry: store openings, B2B launches, activations, PR & media</div>
-      <div class="back-item">Multi-stakeholder program coordination across agencies, clients & global teams</div>
-      <div class="back-item">Logistics, supply chain & operations management across European markets</div>
+      <div class="back-item">Large-scale event &amp; sponsorship operations (Olympic Games, major sporting events)</div>
+      <div class="back-item">Brand market entry: store openings, B2B launches, activations, PR &amp; media</div>
+      <div class="back-item">Multi-stakeholder program coordination across agencies, clients &amp; global teams</div>
+      <div class="back-item">Logistics, supply chain &amp; operations management across European markets</div>
       <div class="back-item">End-to-end digital transformation: CRM, ERP, e-commerce platforms</div>
     </div>
     <div class="back-footer">
@@ -203,9 +237,16 @@
     </div>
   </div>
 
+  <!-- LINK DI COLLEGAMENTO AL PORTFOLIO ESTERNO -->
+  <a href="https://github.io" class="card-portfolio-btn" target="_blank">
+    <span>View Full Portfolio</span>
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+
   <div class="download-hint">Save as PDF from your browser to print · Standard business card: 85×55mm</div>
 
 </div>
 
 </body>
 </html>
+
