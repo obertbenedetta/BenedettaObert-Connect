@@ -1,1 +1,213 @@
 # BenedettaObert-Connect
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Benedetta Obert — Calling Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #1B2B4B;
+    --gold: #C9973A;
+    --gold-light: #E8C97A;
+    --cream: #FAF8F4;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0D1929;
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .card-wrapper {
+    display: flex; flex-direction: column; align-items: center; gap: 32px;
+  }
+
+  /* FRONT CARD */
+  .card {
+    width: 420px;
+    background: var(--navy);
+    position: relative; overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201,151,58,0.15) 0%, transparent 70%);
+  }
+  .card-top {
+    padding: 40px 40px 0;
+    position: relative;
+  }
+  .card-accent {
+    width: 48px; height: 3px; background: var(--gold); margin-bottom: 28px;
+  }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300; color: var(--white);
+    line-height: 1.05; margin-bottom: 4px;
+  }
+  .card-name em { font-style: italic; color: var(--gold-light); }
+  .card-role {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-bottom: 32px; line-height: 1.6;
+  }
+  .card-divider {
+    height: 1px; background: rgba(201,151,58,0.2); margin: 0 40px;
+  }
+  .card-bottom {
+    padding: 28px 40px 40px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .card-contact {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .card-contact-icon {
+    width: 28px; height: 28px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-contact-icon svg { width: 14px; height: 14px; fill: var(--gold); }
+  .card-contact-text {
+    font-size: 13px; color: rgba(255,255,255,0.75);
+    font-weight: 400; line-height: 1.3;
+  }
+  .card-contact-text strong {
+    display: block; font-weight: 500; color: var(--white); font-size: 14px;
+  }
+  .card-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 0 40px 32px;
+  }
+  .card-tag {
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    border: 1px solid rgba(201,151,58,0.35); color: rgba(201,151,58,0.85);
+    padding: 4px 10px; font-weight: 500;
+  }
+
+  /* BACK CARD */
+  .card-back {
+    width: 420px;
+    background: var(--cream);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+    padding: 40px;
+    position: relative; overflow: hidden;
+  }
+  .card-back::before {
+    content: 'B·O';
+    position: absolute; right: -20px; bottom: -40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 140px; font-weight: 300;
+    color: rgba(27,43,75,0.06); line-height: 1;
+    pointer-events: none;
+  }
+  .back-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 20px;
+  }
+  .back-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; color: var(--navy);
+    line-height: 1.3; margin-bottom: 24px;
+  }
+  .back-items { display: flex; flex-direction: column; gap: 10px; }
+  .back-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13px; color: #4B5563; line-height: 1.5;
+  }
+  .back-item::before {
+    content: '—'; color: var(--gold); flex-shrink: 0; font-size: 12px;
+    margin-top: 1px;
+  }
+  .back-footer {
+    margin-top: 28px; padding-top: 20px;
+    border-top: 1px solid rgba(27,43,75,0.15);
+    font-size: 12px; color: #9CA3AF;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .back-footer strong { color: var(--navy); }
+
+  /* CTA */
+  .download-hint {
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.06em; text-align: center;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .card { box-shadow: none; }
+    .card-back { box-shadow: none; }
+    .download-hint { display: none; }
+  }
+  @media (max-width: 460px) {
+    .card, .card-back { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card-wrapper">
+
+  <!-- FRONT -->
+  <div class="card">
+    <div class="card-top">
+      <div class="card-accent"></div>
+      <div class="card-name">Benedetta<br/><em>Obert</em></div>
+      <div class="card-role">Senior Freelance Project Manager •<br/>Global Events &amp; Operations Consultant</div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-bottom">
+      <div class="card-contact">
+        <div class="card-contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div class="card-contact-text">
+          <strong>obert.benedetta@gmail.com</strong>
+        </div>
+      </div>
+      <div class="card-contact">
+        <div class="card-contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div class="card-contact-text">
+          <strong>+39 334 810 3387</strong>
+        </div>
+      </div>
+    </div>
+    <div class="card-tags">
+      <span class="card-tag">Olympic Games</span>
+      <span class="card-tag">Brand Activations</span>
+      <span class="card-tag">Event Operations</span>
+      <span class="card-tag">Luxury & Retail</span>
+      <span class="card-tag">Supply Chain</span>
+      <span class="card-tag">Digital Transformation</span>
+    </div>
+  </div>
+
+  <!-- BACK -->
+  <div class="card-back">
+    <div class="back-label">What I Deliver</div>
+    <div class="back-title">From strategic brief to last day of operations — with nothing falling through the cracks.</div>
+    <div class="back-items">
+      <div class="back-item">Large-scale event & sponsorship operations (Olympic Games, major sporting events)</div>
+      <div class="back-item">Brand market entry: store openings, B2B launches, activations, PR & media</div>
+      <div class="back-item">Multi-stakeholder program coordination across agencies, clients & global teams</div>
+      <div class="back-item">Logistics, supply chain & operations management across European markets</div>
+      <div class="back-item">End-to-end digital transformation: CRM, ERP, e-commerce platforms</div>
+    </div>
+    <div class="back-footer">
+      <div><strong>Benedetta Obert</strong><br/>Senior Freelance PM</div>
+      <div style="text-align:right;">Scrum Master &amp; Product Owner<br/>MSc Engineering — PoliTo</div>
+    </div>
+  </div>
+
+  <div class="download-hint">Save as PDF from your browser to print · Standard business card: 85×55mm</div>
+
+</div>
+
+</body>
+</html>
