@@ -240,8 +240,8 @@
   </div> <!-- Fine card-bottom -->
 </div> <!-- Fine card -->
 
-  <!-- BACK (CORRETTO CON FOOTER VISIBILE E ANCORATO) -->
-  <div class="card-back" style="display: flex; flex-direction: column; justify-content: flex-start; height: 430px; box-sizing: border-box; padding: 40px; position: relative; overflow: hidden;">
+  <!-- BACK (SBLOCCATO: SI ALLARGA IN MODO NATURALE SENZA SCHIACCIARE IL TESTO) -->
+  <div class="card-back" style="display: flex; flex-direction: column; justify-content: flex-start; height: auto; min-height: auto; box-sizing: border-box; padding: 40px; position: relative; overflow: visible;">
     
     <!-- ETICHETTA PICCOLA IN ALTO -->
     <div class="back-label" style="font-size: 13px; letter-spacing: 1px; margin-bottom: 16px;">What I Deliver</div>
@@ -250,7 +250,7 @@
     <div class="back-title" style="font-size: 19px; line-height: 1.4; margin-bottom: 24px; font-weight: 500;">From strategic brief to live execution, turning complexity into seamless delivery.</div>
     
     <!-- ELENCO DELLE VOCI -->
-    <div class="back-items" style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="back-items" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
       <div class="back-item" style="font-size: 14.5px; line-height: 1.3;">Large-scale event, Sponsorship &amp; Partnership Operations</div>
       <div class="back-item" style="font-size: 14.5px; line-height: 1.3;">Brand Market Entry, Retail Launches &amp; Activations</div>
       <div class="back-item" style="font-size: 14.5px; line-height: 1.3;">International Multi-stakeholder Program Leadership</div>
@@ -258,8 +258,8 @@
       <div class="back-item" style="font-size: 14.5px; line-height: 1.3;">Business Transformation &amp; Operating Model Redesign</div>
     </div>
     
-    <!-- FOOTER: ANCORATO RIGIDAMENTE SOPRA IL BORDO INFERIORE DELLA CARD -->
-    <div class="back-footer" style="position: absolute; bottom: 40px; left: 40px; right: 40px; border-top: 1px solid rgba(27,43,75,0.15); padding-top: 16px;">
+    <!-- FOOTER: SEGUE L'ELENCO IN MODO FLUIDO, RIMANE VISIBILE E NON RESTERÀ MAI TAGLIATO -->
+    <div class="back-footer" style="position: relative; border-top: 1px solid rgba(27,43,75,0.15); padding-top: 16px; margin-top: auto;">
       <div style="font-size: 15px; line-height: 1.4; width: 100%;">
         <strong>Benedetta Obert</strong><br/>
         <span style="font-size: 13.5px; opacity: 0.9; color: #4B5563;">Program &amp; Operations Lead</span>
