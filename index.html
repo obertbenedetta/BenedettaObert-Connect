@@ -158,23 +158,29 @@
   <div class="card-top">
     <div class="card-accent"></div>
     <div class="card-name">Benedetta<br/><em>Obert</em></div>
-    <!-- Applicata la forzatura per il minuscolo su tutta la riga del ruolo -->
-    <div class="card-role" style="text-transform: none;">Program &amp; Operations Lead •<br/><em>Global Events, Brand Activations &amp; Operations Consultant</em></div>
+    <!-- Ingrandito il font-size generale del ruolo -->
+    <div class="card-role" style="font-size: 15px; line-height: 1.4;">
+      Program &amp; Operations Lead •<br/>
+      <!-- Forzatura applicata SOLO al corsivo per evitare l'effetto tutto minuscolo sopra -->
+      <em style="text-transform: none;">Global Events, Brand Activations &amp; Operations Consultant</em>
+    </div>
   </div>
-  
+
   <!-- DIVISORE -->
   <div class="card-divider"></div>
   
   <!-- PARTE BASSA -->
   <div class="card-bottom" style="display: flex; flex-direction: column; gap: 15px;">
     
-    <!-- TAGS -->
-    <div class="card-tags" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; width: 100%; margin-bottom: 5px;">
-      <span class="card-tag" style="flex-grow: 1; text-align: center;">Event Operations</span>
-      <span class="card-tag" style="flex-grow: 1; text-align: center;">Brand Activations</span>
-      <span class="card-tag" style="flex-grow: 1; text-align: center;">Market Entry</span>
-      <span class="card-tag" style="flex-grow: 1; text-align: center;">Partnership Development</span>
-      <span class="card-tag" style="flex-grow: 1; text-align: center;">Transformation Programs</span>
+      <!-- TAGS -->
+    <!-- padding: 0 10px; garantisce che non tocchino i bordi della card esterna -->
+    <div class="card-tags" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; width: 100%; margin-bottom: 5px; padding: 0 10px; box-sizing: border-box;">
+      <!-- Ingrandito il testo (font-size) e aumentato lo spazio interno (padding) dei singoli tag -->
+      <span class="card-tag" style="flex-grow: 1; text-align: center; font-size: 13px; padding: 6px 12px;">Event Operations</span>
+      <span class="card-tag" style="flex-grow: 1; text-align: center; font-size: 13px; padding: 6px 12px;">Brand Activations</span>
+      <span class="card-tag" style="flex-grow: 1; text-align: center; font-size: 13px; padding: 6px 12px;">Market Entry</span>
+      <span class="card-tag" style="flex-grow: 1; text-align: center; font-size: 13px; padding: 6px 12px;">Partnership Development</span>
+      <span class="card-tag" style="flex-grow: 1; text-align: center; font-size: 13px; padding: 6px 12px;">Transformation Programs</span>
     </div>
 
     <!-- CONTATTO 1: EMAIL -->
